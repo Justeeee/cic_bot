@@ -9,7 +9,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils import executor
 import time
 
-bot = Bot(token="6858771486:AAFDx_E3EfliKMGigg9O722B7lQ1toWHuD8")
+bot = Bot(token="6530826034:AAFlQ-j5q0ohOc_RwKlxPwHwg0WyljSMRrQ")
 dp = Dispatcher(bot)
 
 inline_btn_1 = InlineKeyboardButton('Ответить', callback_data='answer')
