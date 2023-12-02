@@ -20,7 +20,7 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 async def process_start_command(message: types.Message):
     await message.reply(
         "Welcome to the Student Union Bot!\nWe are here to help you with your requests and complaints. Please feel free to type your query and we will do our best to assist you.")
-    if msg.from_user.id == 1679253464 or msg.from_user.id == 1669864103:
+    if message.from_user.id == 1679253464 or message.from_user.id == 1669864103:
         await bot.reply("REMEBER, IF YOU WILL WRITE ANYTHING, IT WILL APPEAR IN CHAT WITH LAST USER!!!!!!!!")
 
 @dp.message_handler(commands=['help'])
