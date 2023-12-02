@@ -27,7 +27,7 @@ async def process_help_command(message: types.Message):
     await message.reply("Write me something and I will send it to the Students Council!")
 
 
-@dp.callback_query_handler(func=lambda c: c.data == 'answer')
+@dp.callback_query_handler(lambda c: c.data == 'answer')
 async def process_callback_button1(callback_query: types.CallbackQuery):
     global user_id
     await bot.answer_callback_query(callback_query.id)
