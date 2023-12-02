@@ -5,9 +5,8 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 
 
-PROXY_URL = "http://proxy.server:3128"
 
-bot = Bot(token="6637408089:AAEewGo8LALefLK9mQ9dGR8pCHnKX00WvD8", proxy=PROXY_URL)
+bot = Bot(token="6637408089:AAEewGo8LALefLK9mQ9dGR8pCHnKX00WvD8")
 dp = Dispatcher(bot)
 
 
