@@ -1,9 +1,10 @@
+from datetime import datetime
+
 import aiogram
 
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from datetime import datetime
 
 
 
@@ -23,9 +24,9 @@ async def process_help_command(message: types.Message):
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
-    
+    current_time = datetime.now().strftime("%H:%M:%S")
     await bot.send_message(1679253464, f"New message \n"
-                                       f"Time: {datetime.now().strftime("%H:%M:%S")}\n"
+                                       f"Time : {current_time}"
                                        f"First name : {msg.from_user.first_name}\n"
                                        f"Last name: {msg.from_user.last_name}\n"
                                        f"ID : {msg.from_user.id}\n"
