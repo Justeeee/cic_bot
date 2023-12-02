@@ -26,7 +26,7 @@ async def process_help_command(message: types.Message):
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
-    current_time = str(datetime.now(pytz.timezone('Asia/Uzbekistan'))) + " " + str(datetime.now().strftime("%H:%M:%S"))
+    current_time = str(datetime.now(pytz.timezone('Asia/Tashkent'))) + " " + str(datetime.now().strftime("%H:%M:%S"))
     await bot.send_message(1679253464, f"New message \n"
                                        f"Time : {current_time}"
                                        f"First name : {msg.from_user.first_name}\n"
