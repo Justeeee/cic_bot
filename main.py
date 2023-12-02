@@ -20,7 +20,8 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 async def process_start_command(message: types.Message):
     await message.reply(
         "Welcome to the Student Union Bot!\nWe are here to help you with your requests and complaints. Please feel free to type your query and we will do our best to assist you.")
-
+    if msg.from_user.id == 1679253464 or msg.from_user.id == 1669864103:
+        await bot.reply("REMEBER, IF YOU WILL WRITE ANYTHING, IT WILL APPEAR IN CHAT WITH LAST USER!!!!!!!!")
 
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
@@ -33,12 +34,11 @@ async def process_callback_button1(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
     text = callback_query.message.text
     user_id = text[17:29]
-    await bot.send_message(callback_query.from_user.id, f'Write down your answer to this question')
+    await bot.send_message(callback_query.from_user.id, f'Write down your answer to this question\nREMEMBER, IF YOU WILL WRITE MANY ANSWERS THEY ALL WILL GO TO LAST USER YOU ANSWERED')
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
     if msg.from_user.id == 1679253464 or msg.from_user.id == 1669864103:
-        print(user_id, msg.text)
         await bot.send_message(chat_id=int(user_id), text=f"Admin's answer to your question :\n{msg.text}")
         await bot.send_message(chat_id=msg.chat.id, text="Answered successfully")
     else:
