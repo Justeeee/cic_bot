@@ -22,8 +22,13 @@ async def process_help_command(message: types.Message):
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
+    forward_date = msg.forward_date
+    formatted_date = forward_date.strftime("%Y-%m-%d")
+    formatted_time = forward_date.strftime("%H:%M:%S")
+
+    response_text = f"Дата и время сообщения: {formatted_date} {formatted_time}"
     await bot.send_message(1679253464, f"New message \n"
-                                       f"Time : {msg.forward_date}"
+                                       f"Time : {response_text}"
                                        f"First name : {msg.from_user.first_name}\n"
                                        f"Last name: {msg.from_user.last_name}\n"
                                        f"ID : {msg.from_user.id}\n"
