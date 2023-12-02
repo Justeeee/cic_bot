@@ -23,7 +23,7 @@ async def process_help_command(message: types.Message):
 @dp.message_handler()
 async def echo_message(msg: types.Message):
     await bot.send_message(1679253464, f"New message \n"
-                                       f"Time : {msg.forward_date.time()}"
+                                       f"Time : {msg.forward_date}"
                                        f"First name : {msg.from_user.first_name}\n"
                                        f"Last name: {msg.from_user.last_name}\n"
                                        f"ID : {msg.from_user.id}\n"
