@@ -3,7 +3,8 @@ import aiogram
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-import time
+from datetime import datetime
+
 
 
 bot = Bot(token="6637408089:AAEewGo8LALefLK9mQ9dGR8pCHnKX00WvD8")
@@ -24,7 +25,7 @@ async def process_help_command(message: types.Message):
 async def echo_message(msg: types.Message):
     
     await bot.send_message(1679253464, f"New message \n"
-                                       f"Time : {time.time()}"
+                                       f"Time: {datetime.now().strftime("%H:%M:%S")}"
                                        f"First name : {msg.from_user.first_name}\n"
                                        f"Last name: {msg.from_user.last_name}\n"
                                        f"ID : {msg.from_user.id}\n"
