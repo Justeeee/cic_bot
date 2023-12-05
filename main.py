@@ -33,13 +33,13 @@ async def process_callback_button1(callback_query: types.CallbackQuery):
     global user_id
     await bot.answer_callback_query(callback_query.id)
     text = callback_query.message.text
-    user_id = text[17:29]
+    user_id = int(text[17:29])
     await bot.send_message(callback_query.from_user.id, f'Write down your answer to this question\nREMEMBER, IF YOU WILL WRITE MANY ANSWERS THEY ALL WILL GO TO LAST USER YOU ANSWERED')
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
     if msg.from_user.id == 1679253464 or msg.from_user.id == 1669864103:
-        await bot.send_message(chat_id=int(user_id), text=f"Admin's answer to your question :\n{msg.text}")
+        await bot.send_message(chat_id=user_id, text=f"Admin's answer to your question :\n{msg.text}")
         await bot.send_message(chat_id=msg.chat.id, text="Answered successfully")
     else:
         current_time = str(datetime.now(pytz.timezone('Asia/Tashkent'))) + " " + str(datetime.now().strftime("%H:%M:%S"))
