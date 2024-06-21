@@ -61,7 +61,7 @@ async def process_callback_button1(callback_query: types.CallbackQuery):
 @dp.message_handler()
 async def echo_message(msg: types.Message):
     global a_id
-    if msg.from_user.id == 1669864103 or msg.from_user.id ==1679253464:
+    if msg.from_user.id ==1679253464:
         await bot.send_message(chat_id=user_id, text=f"Admin's answer to your question :\n{msg.text}")
         await bot.send_message(chat_id=msg.chat.id, text="Answered successfully")
         await send_message(CHANNEL_ID, text=f"Answer number : #a{a_id}\n"
@@ -76,13 +76,6 @@ async def echo_message(msg: types.Message):
         current_time = str(datetime.now(pytz.timezone('Asia/Tashkent'))) + " " + str(
             datetime.now().strftime("%H:%M:%S"))
         await bot.send_message(1679253464, f"New message \n"
-                                           f"ID : {msg.from_user.id}\n"
-                                           f"Time : {current_time}\n"
-                                           f"First name : {msg.from_user.first_name}\n"
-                                           f"Last name: {msg.from_user.last_name}\n"
-                                           f"Username @{msg.from_user.username}\n"
-                                           f"Text : {msg.text}", reply_markup=inline_kb1)
-        await bot.send_message(1669864103, f"New message \n"
                                            f"ID : {msg.from_user.id}\n"
                                            f"Time : {current_time}\n"
                                            f"First name : {msg.from_user.first_name}\n"
